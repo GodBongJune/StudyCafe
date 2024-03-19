@@ -15,41 +15,46 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _selectedPage = 1;
+  void _onNavigateToPage(int index) {
+    setState(() {
+      _selectedPage = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: IndexedStack(
-          index: _selectedPage,
-          children: [
-            LikeListPage(),
-            HomePage(),
-            MyPage(),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _selectedPage,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: kFontColor2,
-          onTap: (index) {
-            setState(() {
-              _selectedPage = index;
-            });
-          },
-          items: [
-            const BottomNavigationBarItem(
-                label: "찜", icon: Icon(CupertinoIcons.heart)),
-            const BottomNavigationBarItem(
-                label: "홈", icon: Icon(CupertinoIcons.home)),
-            const BottomNavigationBarItem(
-                label: "마이페이지", icon: Icon(CupertinoIcons.person)),
-          ],
-          unselectedLabelStyle: TextStyle(fontSize: 10),
-          selectedLabelStyle: TextStyle(fontSize: 10),
-        ),
+    return Scaffold(
+      body: IndexedStack(
+        index: _selectedPage,
+        children: [
+          LikeListPage(),
+          HomePage(),
+          MyPage(
+            onNavigateToPage: _onNavigateToPage,
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedPage,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: k9DColor,
+        onTap: (index) {
+          setState(() {
+            _selectedPage = index;
+          });
+        },
+        items: [
+          const BottomNavigationBarItem(
+              label: "찜", icon: Icon(CupertinoIcons.heart)),
+          const BottomNavigationBarItem(
+              label: "홈", icon: Icon(CupertinoIcons.home)),
+          const BottomNavigationBarItem(
+              label: "마이페이지", icon: Icon(CupertinoIcons.person)),
+        ],
+        unselectedLabelStyle: TextStyle(fontSize: 10),
+        selectedLabelStyle: TextStyle(fontSize: 10),
       ),
     );
   }

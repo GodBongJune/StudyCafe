@@ -29,8 +29,7 @@ ThemeData theme() {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    titleTextStyle: TextStyle(
-        color: kMainColor, fontWeight: FontWeight.bold, fontSize: fontLarge),
+    titleTextStyle: TextStyle(color: kMainColor, fontSize: fontLarge),
     centerTitle: true,
     elevation: 0,
   );

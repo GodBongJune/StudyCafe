@@ -34,6 +34,12 @@ dependencies:
   animated_splash_screen: ^1.0.1+2 #Splash화면 라이브러리
   carousel_slider: ^4.2.1 #이미지 슬라이더 라이브러리
   logger: ^2.0.2+1 #로그 라이브러리
+  table_calendar: ^3.0.2 #달력 라이브러리
+  flutter_time_picker_spinner: ^2.0.0 #시간 선택 라이브러리
+  intl: ^0.18.1 #달력 날짜 포멧 라이브러리
+  flutter_riverpod: ^2.4.9 #상태관리 라이브러리
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -69,6 +75,8 @@ flutter:
     - assets/images/guide/
     - assets/images/study/
     - assets/images/banner/
+    - assets/images/detail/
+    - assets/sns/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
